@@ -24,7 +24,11 @@ public class Book extends BaseTimeEntity {
 
     private String subTitle;
 
+    private String description;
+
     private String writer;
+
+    private String painter;
 
     private String publisher;
 
@@ -32,9 +36,9 @@ public class Book extends BaseTimeEntity {
 
     private int price;
 
-    private int point;
+    private int mileage;
 
-    private int score;
+    private double score;
 
     private int tag;
 
