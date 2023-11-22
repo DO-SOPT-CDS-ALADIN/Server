@@ -27,7 +27,6 @@ public class MainController {
     @Operation(summary = "편집장의 선택 조회", description = "편집장의 선택 정보 불러오기 API입니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "편집장의 선택 목록 불러오기 완료", content = @Content(schema = @Schema(implementation = EditorChoiceResponse.class))),
-            @ApiResponse(responseCode = "400", description = "잘못된 경로입니다.", content = @Content)
     })
     @GetMapping("/editorchoice")
     public BaseApiResponse<Object> getEditorChoice(){
