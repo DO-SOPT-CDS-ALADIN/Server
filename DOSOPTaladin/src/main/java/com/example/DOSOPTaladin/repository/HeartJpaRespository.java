@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HeartJpaRespository extends JpaRepository<Heart, Long> {
 
-    boolean existsByBook_Id(long bookId);
+    boolean existsByBookId(long bookId);
 
 }
