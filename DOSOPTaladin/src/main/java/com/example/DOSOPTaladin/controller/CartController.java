@@ -32,4 +32,14 @@ public class CartController {
         cartService.saveCart(bookId);
         return new BaseApiResponseNonData("장바구니에 담기 완료.");
     }
+
+
+    @Operation(summary = "장바구니 개수 조회", description = "장바구니 개수 조회 API입니다.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "장바구니에 담긴 개수 조회 완료."),
+    })
+    @GetMapping()
+    public BaseApiResponse getCartNum(){
+        return new BaseApiResponse("장바구니에 담긴 개수 조회 완료.", cartService.countCart());
+    }
 }
