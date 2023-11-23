@@ -1,6 +1,7 @@
 package com.example.DOSOPTaladin.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Null;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,7 @@ public class Book extends BaseTimeEntity {
 
     private String writer;
 
+    @Column(nullable = true)
     private String painter;
 
     private String publisher;
