@@ -21,4 +21,8 @@ public class Cart {
 
     private int num;
 
+    public Cart(Book book, int num) {
+        this.book = book;
+        this.num = num;
+    }
 }
