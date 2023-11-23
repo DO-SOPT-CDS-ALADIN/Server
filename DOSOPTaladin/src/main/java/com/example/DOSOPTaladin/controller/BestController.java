@@ -2,9 +2,7 @@ package com.example.DOSOPTaladin.controller;
 
 
 import com.example.DOSOPTaladin.dto.response.best.BestBookResponse;
-import com.example.DOSOPTaladin.dto.response.main.EditorChoiceResponse;
 import com.example.DOSOPTaladin.service.BestService;
-import com.example.DOSOPTaladin.service.MainService;
 import com.example.DOSOPTaladin.util.BaseApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
