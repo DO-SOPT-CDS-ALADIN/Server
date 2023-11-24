@@ -1,5 +1,6 @@
 package com.example.DOSOPTaladin.controller;
 
+import com.example.DOSOPTaladin.dto.response.book.BookDetailResponse;
 import com.example.DOSOPTaladin.dto.response.main.EditorChoiceResponse;
 import com.example.DOSOPTaladin.service.BookService;
 import com.example.DOSOPTaladin.util.BaseApiResponse;
@@ -30,7 +31,7 @@ public class BookController {
             @ApiResponse(responseCode = "200", description = "도서 상세 정보 불러오기 완료", content = @Content(schema = @Schema(implementation = EditorChoiceResponse.class))),
     })
     @GetMapping(value = "/{bookId}")
-    public BaseApiResponse<Object> getBookDetails(@PathVariable Long bookId){
+    public BaseApiResponse<BookDetailResponse> getBookDetails(@PathVariable Long bookId){
         return new BaseApiResponse<>("도서 상세 정보 불러오기 완료", bookService.getBookDetails(bookId));
     }
 

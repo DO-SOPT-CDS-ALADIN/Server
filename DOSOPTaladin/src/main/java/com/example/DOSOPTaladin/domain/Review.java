@@ -19,7 +19,7 @@ public class Review extends BaseTimeEntity{
     @JoinColumn(name = "book_id")
     private Book book;
 
-    private int score;
+    private double score;
 
     @Column(columnDefinition = "TEXT")
     private String content;
