@@ -2,6 +2,7 @@ package com.example.DOSOPTaladin.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -19,9 +20,17 @@ public class Review extends BaseTimeEntity{
     @JoinColumn(name = "book_id")
     private Book book;
 
-    private int score;
+    private double score;
 
     @Column(columnDefinition = "TEXT")
     private String content;
+
+
+    @Builder
+    public Review(Book book, double score, String content){
+        this.book = book;
+        this.score = score;
+        this.content = content;
+    }
 
 }
