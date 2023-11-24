@@ -19,4 +19,7 @@ public class Heart {
     @JoinColumn(name = "book_id")
     private Book book;
 
+    public Heart(Book book) {
+        this.book = book;
+    }
 }
