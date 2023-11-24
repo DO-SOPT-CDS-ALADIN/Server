@@ -3,7 +3,7 @@ package com.example.DOSOPTaladin.service;
 import com.example.DOSOPTaladin.domain.Book;
 import com.example.DOSOPTaladin.dto.response.book.BookDetailResponse;
 import com.example.DOSOPTaladin.repository.BookJpaRepository;
-import com.example.DOSOPTaladin.repository.HeartJpaRespository;
+import com.example.DOSOPTaladin.repository.HeartJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,12 +18,12 @@ import java.util.List;
 public class BookService {
 
     private final BookJpaRepository bookJpaRepository;
-    private final HeartJpaRespository heartJpaRespository;
+    private final HeartJpaRepository heartJpaRepository;
 
 
     public BookDetailResponse getBookDetails(Long bookId){
         Book book = bookJpaRepository.findByIdOrThrow(bookId);
-        boolean isHearted = heartJpaRespository.existsByBookId(bookId);
+        boolean isHearted = heartJpaRepository.existsByBookId(bookId);
 
         return new BookDetailResponse(
                 book.getId(),
