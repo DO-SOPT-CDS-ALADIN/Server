@@ -62,12 +62,20 @@ public class CartService {
         );
     }
 
+    @Transactional
     public int patchBookNum(Long bookId, PatchBookNumRequest patchBookNumRequest){
         Book book = bookJpaRepository.findByIdOrThrow(bookId);
         Cart cart = cartJpaRepository.findByBookOrThrow(book);
         cart.setNum(patchBookNumRequest.count());
 
         return cart.getNum();
+    }
+
+    @Transactional
+    public void deleteCart(Long bookId){
+        Book book = bookJpaRepository.findByIdOrThrow(bookId);
+        Cart cart = cartJpaRepository.findByBookOrThrow(book);
+        cartJpaRepository.delete(cart);
     }
 
     private String toDiscountPrice(int price){

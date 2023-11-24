@@ -58,4 +58,11 @@ public class CartController {
     public BaseApiResponse<Integer> patchBookNum(@PathVariable Long bookId, @RequestBody PatchBookNumRequest patchBookNumRequest){
         return new BaseApiResponse<>("장바구니 개수 변경 완료", cartService.patchBookNum(bookId, patchBookNumRequest));
     }
+
+    @Operation(summary = "장바구니 삭제", description = "장바구니 삭제 API입니다.")
+    @DeleteMapping("{bookId}")
+    public BaseApiResponseNonData deleteCart(@PathVariable Long bookId){
+        cartService.deleteCart(bookId);
+        return new BaseApiResponseNonData("장바구니 도서 삭제 완료");
+    }
 }
