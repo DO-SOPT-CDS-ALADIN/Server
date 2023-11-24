@@ -42,4 +42,10 @@ public class CartController {
     public BaseApiResponse getCartNum(){
         return new BaseApiResponse("장바구니에 담긴 개수 조회 완료.", cartService.countCart());
     }
+
+    @Operation(summary = "장바구니 목록 조회", description = "장바구니 목록 조회 API입니다.")
+    @GetMapping(value = "/my")
+    public BaseApiResponse<Object> getMyCartLists(){
+        return new BaseApiResponse("장바구니 목록 조회 완료", cartService.getMyCartLists());
+    }
 }

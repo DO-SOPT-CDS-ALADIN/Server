@@ -23,7 +23,7 @@ public class BookService {
 
     public BookDetailResponse getBookDetails(Long bookId){
         Book book = bookJpaRepository.findByIdOrThrow(bookId);
-        boolean isHearted = heartJpaRepository.existsByBookId(bookId);
+        boolean isHearted = heartJpaRepository.existsByBook_Id(bookId);
 
         return new BookDetailResponse(
                 book.getId(),
