@@ -1,7 +1,9 @@
 package com.example.DOSOPTaladin.controller;
 
 
+import com.example.DOSOPTaladin.dto.request.cart.PatchBookNumRequest;
 import com.example.DOSOPTaladin.dto.response.best.BestBookResponse;
+import com.example.DOSOPTaladin.dto.response.cart.MyCartResponse;
 import com.example.DOSOPTaladin.service.common.CartService;
 import com.example.DOSOPTaladin.util.BaseApiResponse;
 import com.example.DOSOPTaladin.util.BaseApiResponseNonData;
@@ -13,6 +15,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @Tag(name = "CartController")
@@ -45,7 +49,13 @@ public class CartController {
 
     @Operation(summary = "장바구니 목록 조회", description = "장바구니 목록 조회 API입니다.")
     @GetMapping(value = "/my")
-    public BaseApiResponse<Object> getMyCartLists(){
+    public BaseApiResponse<List<MyCartResponse>> getMyCartLists(){
         return new BaseApiResponse("장바구니 목록 조회 완료", cartService.getMyCartLists());
+    }
+
+    @Operation(summary = "장바구니 개수 변경", description = "장바구니 개수 변경 API입니다.")
+    @PatchMapping("{bookId}")
+    public BaseApiResponse<Integer> patchBookNum(@PathVariable Long bookId, @RequestBody PatchBookNumRequest patchBookNumRequest){
+        return new BaseApiResponse<>("장바구니 개수 변경 완료", cartService.patchBookNum(bookId, patchBookNumRequest));
     }
 }

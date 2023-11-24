@@ -2,6 +2,7 @@ package com.example.DOSOPTaladin.service.common;
 
 import com.example.DOSOPTaladin.domain.Book;
 import com.example.DOSOPTaladin.domain.Cart;
+import com.example.DOSOPTaladin.dto.request.cart.PatchBookNumRequest;
 import com.example.DOSOPTaladin.dto.response.cart.MyCartResponse;
 import com.example.DOSOPTaladin.dto.response.common.CountCartResponse;
 import com.example.DOSOPTaladin.repository.BookJpaRepository;
@@ -59,6 +60,14 @@ public class CartService {
                 toMileage(book.getMileage()),
                 isHearted
         );
+    }
+
+    public int patchBookNum(Long bookId, PatchBookNumRequest patchBookNumRequest){
+        Book book = bookJpaRepository.findByIdOrThrow(bookId);
+        Cart cart = cartJpaRepository.findByBookOrThrow(book);
+        cart.setNum(patchBookNumRequest.count());
+
+        return cart.getNum();
     }
 
     private String toDiscountPrice(int price){
