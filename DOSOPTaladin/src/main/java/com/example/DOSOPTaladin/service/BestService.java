@@ -30,7 +30,7 @@ public class BestService {
 
         for( Book book : books){
             BestBookResponse bestBookResponse = new BestBookResponse();
-            bestBookResponse = new BestBookResponse(book, heartJpaRespository.existsByBook_Id(book.getId()));
+            bestBookResponse = new BestBookResponse(book, heartJpaRespository.existsByBookId(book.getId()));
 
             bestBookResponseList.add(bestBookResponse);
         }
