@@ -13,6 +13,14 @@
 <br>
 
 
+
+## 🔨 Project Architecture
+![KakaoTalk_Photo_2023-11-27-18-17-13](https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/bc065675-0e69-4005-a29f-91311d42d502)
+
+
+
+<br>
+
 ## 🔨 Project Structure
 ```
 ├─📁 main
