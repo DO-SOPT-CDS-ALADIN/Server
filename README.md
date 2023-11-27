@@ -7,7 +7,7 @@
 |:--------------------------------------------:|:------------------------------------------:|
 | <img src ="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/7d882575-1deb-4182-9235-e1d3033bc4a9" width="300" height="300"/> | <img src ="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/3aeb8640-18cd-420f-9287-4afe2a9bb9bd" width="300" height="300"/> |
 |             Server Developer                 |               Server Developer                   |
-| DB 설계 <br/>DETAIL API, SHOPPING API 개발<br/> | 프로젝트 세팅<br />MAIN API, BEST API 개발 |
+| DB 설계 <br/>DETAIL API, SHOPPING API 개발<br/> | 프로젝트 세팅 및 배포 <br />MAIN API, BEST API 개발 |
 
 
 <br>
