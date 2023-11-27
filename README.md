@@ -15,7 +15,8 @@
 
 
 ## 🔨 Project Architecture
-![KakaoTalk_Photo_2023-11-27-18-17-13](https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/bc065675-0e69-4005-a29f-91311d42d502)
+
+<img width="705" alt="Architecture" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/bc065675-0e69-4005-a29f-91311d42d502">
 
 
 
@@ -46,7 +47,7 @@
 <br>
 
 ## 🛠️ ERD
-<img width="705" alt="ERD" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/4fc842ab-79a3-4fd4-adbd-c48f5d12d991">
+<img width="705" alt="ERD" src="https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/4fc842ab-79a3-4fd4-adbd-c48f5d12d991](https://github.com/SOPT-33th-Joint-Seminar-WEB-1/Server/assets/62981652/07d88db7-7f8a-4fc3-8b45-c7a148a1b62a">
 
 
 <br><br>
