@@ -44,7 +44,7 @@ public class BookService {
     }
 
     private String toDatePattern(LocalDateTime date) {
-        return date.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일"));
+        return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
     private String toDiscountPrice(int price){
