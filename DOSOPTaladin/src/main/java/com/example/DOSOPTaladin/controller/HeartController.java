@@ -28,7 +28,6 @@ public class HeartController {
     })
     @PostMapping()
     public BaseApiResponseNonData postSaveHeartStatus(@RequestParam("bookId")int bookId){
-        heartService.clickHeart(bookId);
-        return new BaseApiResponseNonData("좋아요/취소 기능 처리 완료");
+        return new BaseApiResponseNonData(heartService.clickHeart(bookId));
     }
 }

@@ -33,8 +33,7 @@ public class CartController {
     })
     @PostMapping()
     public BaseApiResponseNonData postSaveCart(@RequestParam("bookId")int bookId){
-        cartService.saveCart(bookId);
-        return new BaseApiResponseNonData("장바구니에 담기 완료.");
+        return new BaseApiResponseNonData(cartService.saveCart(bookId));
     }
 
 
@@ -62,7 +61,6 @@ public class CartController {
     @Operation(summary = "장바구니 삭제", description = "장바구니 삭제 API입니다.")
     @DeleteMapping("{bookId}")
     public BaseApiResponseNonData deleteCart(@PathVariable Long bookId){
-        cartService.deleteCart(bookId);
-        return new BaseApiResponseNonData("장바구니 도서 삭제 완료");
+        return new BaseApiResponseNonData(cartService.deleteCart(bookId));
     }
 }

@@ -27,12 +27,17 @@ public class CartService {
     private final BookJpaRepository bookJpaRepository;
     private final HeartJpaRepository heartJpaRepository;
 
-    public void saveCart(int bookId) {
+    public String saveCart(int bookId) {
         Book book = bookJpaRepository.findById(Long.valueOf(bookId)).orElseThrow(() -> new  BadRequestException(ErrorResponseStatus.BAD_REQUEST_MISSING_VALUE));
 
-        Cart cart = new Cart(book, 1);
+        if(!cartJpaRepository.existsCartByBook_Id(book.getId())){ //Book이 없으면 카트에 저장해야함
+            Cart cart = new Cart(book, 1);
+            cartJpaRepository.save(cart);
+            return "장바구니에 담기 완료.";
+        } else { //Book이 있다는 뜻
+            return "장바구니에 이미 담겨있습니다.";
+        }
 
-        cartJpaRepository.save(cart);
     }
 
     public CountCartResponse countCart(){
@@ -65,17 +70,25 @@ public class CartService {
     @Transactional
     public int patchBookNum(Long bookId, PatchBookNumRequest patchBookNumRequest){
         Book book = bookJpaRepository.findByIdOrThrow(bookId);
+
         Cart cart = cartJpaRepository.findByBookOrThrow(book);
         cart.setNum(patchBookNumRequest.count());
 
         return cart.getNum();
+
     }
 
     @Transactional
-    public void deleteCart(Long bookId){
+    public String deleteCart(Long bookId){
         Book book = bookJpaRepository.findByIdOrThrow(bookId);
-        Cart cart = cartJpaRepository.findByBookOrThrow(book);
-        cartJpaRepository.delete(cart);
+
+        if(cartJpaRepository.existsCartByBook_Id(book.getId())){ //Book이 카트에 있으면 삭제해야함
+            Cart cart = cartJpaRepository.findByBookOrThrow(book);
+            cartJpaRepository.delete(cart);
+            return "장바구니 도서 삭제 완료";
+        } else { //Book이 카트에 없으면 이미 카트에서  삭제된것임
+            return "이미 삭제 되었습니다 ";
+        }
     }
 
     private String toDiscountPrice(int price){
