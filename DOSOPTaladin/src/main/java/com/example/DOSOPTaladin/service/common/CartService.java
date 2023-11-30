@@ -58,7 +58,8 @@ public class CartService {
                 book.getTag(),
                 toDiscountPrice(book.getPrice()),
                 toMileage(book.getMileage()),
-                isHearted
+                isHearted,
+                cart.getNum()
         );
     }
 
