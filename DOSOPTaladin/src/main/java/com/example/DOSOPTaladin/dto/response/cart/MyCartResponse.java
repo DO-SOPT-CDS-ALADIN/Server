@@ -12,7 +12,8 @@ public record MyCartResponse(
         int tag,
         String discountPrice,
         String mileage,
-        boolean heart
+        boolean heart,
+        int count
 
 ) {
 }
